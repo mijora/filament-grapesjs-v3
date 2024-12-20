@@ -76,7 +76,13 @@ class FilamentGrapesJsServiceProvider extends PackageServiceProvider
             Css::make('filament-grapesjs', __DIR__.'/../resources/dist/css/filament-grapesjs.css'),
 
             Js::make('grapesjs', __DIR__.'/../resources/dist/js/grapes.min.js'),
-            Js::make('grapesjs-preset-webpage', __DIR__.'/../resources/dist/js/grapesjs-preset-webpage.js'),
+            Js::make('grapesjs-preset-webpage', __DIR__.'/../resources/dist/js/grapesjs-preset-webpage.min.js'),
+            Js::make('grapesjs-preset-webpage', __DIR__.'/../resources/dist/js/grapesjs-blocks-basic.min.js'),
+            Js::make('grapesjs-preset-webpage', __DIR__.'/../resources/dist/js/grapesjs-plugin-forms.min.js'),
+            Js::make('grapesjs-preset-webpage', __DIR__.'/../resources/dist/js/grapesjs-navbar.min.js'),
+            Js::make('grapesjs-preset-webpage', __DIR__.'/../resources/dist/js/grapesjs-lory-slider.min.js'),
+            Js::make('grapesjs-preset-webpage', __DIR__.'/../resources/dist/js/grapesjs-custom-code.min.js'),
+            Js::make('grapesjs-navbar', __DIR__.'/../resources/dist/js/grapesjs-plugin-forms.min.js'),
             //Js::make('filament-grapesjs-tailwindcss', __DIR__.'/../resources/dist/js/grapesjs-tailwind.min.js'),
             Js::make('filament-grapesjs', __DIR__.'/../resources/dist/js/filament-grapesjs.js'),
         ];
