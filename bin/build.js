@@ -87,7 +87,7 @@ const defaultOptions = {
                     to: ['./resources/dist/js/grapesjs-navbar.min.js.map'],
                 },
                 {
-                    from: ['./node_modules/grapesjs-lory-slider/dist/index.js'],
+                    from: ['./node_modules/grapesjs-lory-slider/dist/grapesjs-lory-slider.min.js'],
                     to: ['./resources/dist/js/grapesjs-lory-slider.min.js'],
                 },
                 {
