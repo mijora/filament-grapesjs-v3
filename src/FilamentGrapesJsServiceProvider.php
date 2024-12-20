@@ -76,7 +76,8 @@ class FilamentGrapesJsServiceProvider extends PackageServiceProvider
             Css::make('filament-grapesjs', __DIR__.'/../resources/dist/css/filament-grapesjs.css'),
 
             Js::make('grapesjs', __DIR__.'/../resources/dist/js/grapes.min.js'),
-            Js::make('filament-grapesjs-tailwindcss', __DIR__.'/../resources/dist/js/grapesjs-tailwind.min.js'),
+            Js::make('grapesjs-preset-webpage', __DIR__.'/../resources/dist/js/grapesjs-preset-webpage.js'),
+            //Js::make('filament-grapesjs-tailwindcss', __DIR__.'/../resources/dist/js/grapesjs-tailwind.min.js'),
             Js::make('filament-grapesjs', __DIR__.'/../resources/dist/js/filament-grapesjs.js'),
         ];
     }
