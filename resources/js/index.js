@@ -17,11 +17,11 @@ document.addEventListener('alpine:init', () => {
                     storageManager: false,
                     loadHtml: state,
                     plugins: [
-                        //"grapesjs-tailwind",
+                        "grapesjs-tailwind",
                         "grapesjs-preset-webpage",
                         "gjs-blocks-basic",
                         "grapesjs-plugin-forms",
-                        "grapesjs-lory-slider",
+                        //"grapesjs-lory-slider",
                         "grapesjs-navbar",
                         "grapesjs-custom-code",
                     ],
