@@ -7,15 +7,16 @@ document.addEventListener('alpine:init', () => {
             tools: tools,
             init() {
                 let enabledTools = {};
-
+                const htmlData = (this.state ?? '').split('<---!!! STYLE !!!--->');
                 this.instance =  grapesjs.init({
                     height: minHeight + 'px',
                     container: container ? container : ".filament-grapesjs .grapesjs-wrapper",
                     showOffsets: true,
-                    fromElement: true,
+                    fromElement: false,
                     noticeOnUnload: false,
                     storageManager: false,
-                    loadHtml: state,
+                    components: htmlData[0],
+                    style: htmlData[1],
                     plugins: [
                         "grapesjs-tailwind",
                         "grapesjs-preset-webpage",
@@ -32,9 +33,11 @@ document.addEventListener('alpine:init', () => {
                     });
                     var extract = content.match(/<body\b[^>]*>([\s\S]*?)<\/body>/);
                     if(extract)
-                        this.state = extract[1];
+                        content = extract[1];
                     else
-                        this.state = this.instance.getHtml();
+                        content = this.instance.getHtml();
+                    
+                    this.state = content + '<---!!! STYLE !!!--->' + this.instance.getCss();
                 })
             }
         })
