@@ -19,6 +19,11 @@ document.addEventListener('alpine:init', () => {
                     plugins: [
                         //"grapesjs-tailwind",
                         "grapesjs-preset-webpage",
+                        "gjs-blocks-basic",
+                        "grapesjs-plugin-forms",
+                        "grapesjs-lory-slider",
+                        "grapesjs-navbar",
+                        "grapesjs-custom-code",
                     ],
                 });
                 this.instance.on('update', e => {
