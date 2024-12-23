@@ -86,10 +86,10 @@ const defaultOptions = {
                     from: ['./node_modules/grapesjs-navbar/dist/index.js.map'],
                     to: ['./resources/dist/js/grapesjs-navbar.min.js.map'],
                 },
-                {
+                /*{
                     from: ['./node_modules/grapesjs-lory-slider/dist/grapesjs-lory-slider.min.js'],
                     to: ['./resources/dist/js/grapesjs-lory-slider.min.js'],
-                },
+                },*/
                 {
                     from: ['./node_modules/grapesjs-custom-code/dist/index.js'],
                     to: ['./resources/dist/js/grapesjs-custom-code.min.js'],
