@@ -17,6 +17,7 @@ document.addEventListener('alpine:init', () => {
                     storageManager: false,
                     components: htmlData[0],
                     style: htmlData[1],
+                    script: htmlData[2],
                     plugins: [
                         "grapesjs-tailwind",
                         "grapesjs-preset-webpage",
@@ -37,7 +38,7 @@ document.addEventListener('alpine:init', () => {
                     else
                         content = this.instance.getHtml();
                     
-                    this.state = content + '<---!!! STYLE !!!--->' + this.instance.getCss();
+                    this.state = content + '<---!!! STYLE !!!--->' + this.instance.getCss() + '<---!!! STYLE !!!--->' + this.instance.getJs();
                 })
             }
         })
