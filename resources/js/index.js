@@ -21,25 +21,6 @@ document.addEventListener('alpine:init', () => {
                     assetManager: {
                         upload: uploadUrl,
                         uploadName: 'files',
-                        uploadFile: (e, formData) => {
-                            // Custom upload logic
-                            //formData.append('my-custom-data', 'example-value'); // Add extra data
-                            return fetch(uploadUrl, {
-                              method: 'POST',
-                              body: formData,
-                            })
-                            .then((response) => response.json())
-                            .then((data) => {
-                            // Expected response format: [{src: 'url/to/asset.jpg', ...}]
-                            return data;
-                            });
-                        },
-                        // Set a custom fetcher function to load assets
-                        assets: async () => {
-                            const response = await fetch(uploadUrl); // Your API endpoint
-                            const assets = await response.json(); // Expected format: [{src: 'url/to/asset.jpg', ...}]
-                            return assets;
-                        },
                         // Configure other asset manager settings
                         autoAdd: true,
                     },
