@@ -36,11 +36,30 @@ document.addEventListener('alpine:init', () => {
                         "grapesjs-custom-code",
                     ],
                 });
+                const am = this.instance.AssetManager;
+                this.instance.on('asset:remove', (asset) => {
+                    fetch(uploadUrl, {
+                        method: 'DELETE',
+                        headers: {
+                          'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ src: asset.getSrc() }),
+                      })
+                    .then((response) => {
+                        if (!response.ok) {
+                        throw new Error('Failed to delete the asset on the server');
+                        }
+                        console.log(`Asset deleted successfully: ${assetSrc}`);
+                    })
+                    .catch((error) => {
+                        console.error('Error deleting asset:', error);
+                    })
+                });
                 this.instance.on("run:open-assets", function () {
                     fetch(uploadUrl)
                     .then((response) => response.json())
                     .then((assets) => {
-                      editor.AssetManager.add(assets.data); // Dynamically add assets
+                        am.add(assets.data); // Dynamically add assets
                     })
                     .catch((error) => console.error('Error fetching assets:', error));
                 });
