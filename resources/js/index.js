@@ -22,7 +22,14 @@ document.addEventListener('alpine:init', () => {
                         upload: uploadUrl,
                         uploadName: 'files',
                         // Configure other asset manager settings
-                        autoAdd: true,
+                        assets: [], // Initial assets, leave empty for dynamic fetching
+                        autoAdd: false, // Prevent auto-adding of uploaded assets
+                        // Enable the prefetch on open
+                        onOpen: async () => {
+                            const response = await fetch(uploadUrl); // Your API endpoint
+                            const assets = await response.json(); // Fetch assets as an array
+                            editor.AssetManager.add(assets.data); // Add assets dynamically
+                        },
                     },
                     plugins: [
                         "grapesjs-tailwind",
