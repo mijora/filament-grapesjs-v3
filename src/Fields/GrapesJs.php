@@ -7,6 +7,7 @@ namespace Dotswan\FilamentGrapesjs\Fields;
 use Filament\Forms\Components\Field;
 use Filament\Forms\Concerns\HasStateBindingModifiers;
 use Dotswan\FilamentGrapesjs\Fields\Concerns\InteractsWithTools;
+use Closure;
 
 class GrapesJs extends Field
 {
@@ -22,6 +23,8 @@ class GrapesJs extends Field
 
     protected int | Closure | null $minHeight = 768;
 
+    protected string | Closure | null $uploadUrl = null;
+
     public function minHeight(int | Closure | null $minHeight): static
     {
         $this->minHeight = $minHeight;
@@ -32,6 +35,18 @@ class GrapesJs extends Field
     public function getMinHeight(): ?int
     {
         return $this->evaluate($this->minHeight);
+    }
+
+    public function uploadUrl(int | Closure | null $uploadUrl): static
+    {
+        $this->uploadUrl = $uploadUrl;
+
+        return $this;
+    }
+
+    public function getUploadUrl(): ?int
+    {
+        return $this->evaluate($this->uploadUrl);
     }
 
     public function getHtmlData()

@@ -1,7 +1,7 @@
 document.addEventListener('alpine:init', () => {
     Alpine.data(
         "grapesjs",
-        ({ state, statePath, readOnly, tools, minHeight, container }) => ({
+        ({ state, statePath, readOnly, tools, minHeight, container, uploadUrl }) => ({
             instance: null,
             state: state,
             tools: tools,
@@ -18,6 +18,10 @@ document.addEventListener('alpine:init', () => {
                     components: htmlData[0],
                     style: htmlData[1],
                     script: htmlData[2],
+                    assetManager: {
+                        upload: uploadUrl,
+                        uploadName: 'files',
+                    },
                     plugins: [
                         "grapesjs-tailwind",
                         "grapesjs-preset-webpage",
