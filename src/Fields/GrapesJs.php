@@ -37,14 +37,14 @@ class GrapesJs extends Field
         return $this->evaluate($this->minHeight);
     }
 
-    public function uploadUrl(int | Closure | null $uploadUrl): static
+    public function uploadUrl(string | Closure | null $uploadUrl): static
     {
         $this->uploadUrl = $uploadUrl;
 
         return $this;
     }
 
-    public function getUploadUrl(): ?int
+    public function getUploadUrl(): ?string
     {
         return $this->evaluate($this->uploadUrl);
     }
