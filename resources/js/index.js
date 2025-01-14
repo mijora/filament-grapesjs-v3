@@ -25,11 +25,6 @@ document.addEventListener('alpine:init', () => {
                         assets: [], // Initial assets, leave empty for dynamic fetching
                         autoAdd: false, // Prevent auto-adding of uploaded assets
                         // Enable the prefetch on open
-                        onOpen: async () => {
-                            const response = await fetch(uploadUrl); // Your API endpoint
-                            const assets = await response.json(); // Fetch assets as an array
-                            editor.AssetManager.add(assets.data); // Add assets dynamically
-                        },
                     },
                     plugins: [
                         "grapesjs-tailwind",
@@ -40,6 +35,14 @@ document.addEventListener('alpine:init', () => {
                         "grapesjs-navbar",
                         "grapesjs-custom-code",
                     ],
+                });
+                this.instance.on("run:open-assets", function () {
+                    fetch(uploadUrl)
+                    .then((response) => response.json())
+                    .then((assets) => {
+                      editor.AssetManager.add(assets.data); // Dynamically add assets
+                    })
+                    .catch((error) => console.error('Error fetching assets:', error));
                 });
                 this.instance.on('update', e => {
                     var content = this.instance.getHtml({
@@ -52,7 +55,7 @@ document.addEventListener('alpine:init', () => {
                         content = this.instance.getHtml();
                     
                     this.state = content + '<---!!! STYLE !!!--->' + this.instance.getCss() + '<---!!! STYLE !!!--->' + this.instance.getJs();
-                })
+                });
             }
         })
     )
