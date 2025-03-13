@@ -73,6 +73,8 @@ document.addEventListener('alpine:init', () => {
                     .catch((error) => console.error('Error fetching assets:', error));
                 });
                 this.instance.on('update', e => {
+                    console.log('update');
+                    this.instance.set('dmode', 'off'); // Prevent unnecessary rendering
                     var content = this.instance.getHtml({
                         cleanId: true
                     });
