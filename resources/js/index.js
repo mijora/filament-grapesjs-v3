@@ -74,7 +74,7 @@ document.addEventListener('alpine:init', () => {
                 });
                 this.instance.on('update', e => {
                     console.log('update');
-                    this.instance.set('dmode', 'off'); // Prevent unnecessary rendering
+                    e.set('dmode', 'off'); // Prevent unnecessary rendering
                     var content = this.instance.getHtml({
                         cleanId: true
                     });
