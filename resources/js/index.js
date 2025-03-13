@@ -26,23 +26,6 @@ document.addEventListener('alpine:init', () => {
                         autoAdd: false, // Prevent auto-adding of uploaded assets
                         // Enable the prefetch on open
                     },
-                    panels: {
-                        defaults: [
-                          {
-                            buttons: [
-                              //...
-                              {
-                                attributes: { title: 'Open Code' },
-                                className: 'fa fa-code',
-                                command: 'open-code',
-                                id: 'open-code'
-                              }
-                              //...
-                            ],
-                            id: 'views'
-                          }
-                        ]
-                    },
                     plugins: [
                         "grapesjs-tailwind",
                         "grapesjs-preset-webpage",
@@ -53,6 +36,14 @@ document.addEventListener('alpine:init', () => {
                         "grapesjs-custom-code",
                         "grapesjs-component-code-editor",
                     ],
+                });
+                const panelManager = this.instance.Panels;
+                const newButton = panelManager.addButton('views',{
+                    id: 'openCode',
+                    className: 'fa fa-code',
+                    command: 'open-code',
+                    attributes: { title: 'Open code'},
+                    active: false,
                 });
                 const am = this.instance.AssetManager;
                 this.instance.on('asset:remove', (asset) => {
