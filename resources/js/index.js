@@ -34,9 +34,11 @@ document.addEventListener('alpine:init', () => {
                         //"grapesjs-lory-slider",
                         "grapesjs-navbar",
                         "grapesjs-custom-code",
-                        "grapesjs-component-code-editor",
+                        "grapesjs-code-editor",
+                        //"grapesjs-component-code-editor",
                     ],
                 });
+                /*
                 const panelManager = this.instance.Panels;
                 const newButton = panelManager.addButton('views',{
                     id: 'openCode',
@@ -45,6 +47,7 @@ document.addEventListener('alpine:init', () => {
                     attributes: { title: 'Open code'},
                     active: false,
                 });
+                */
                 const am = this.instance.AssetManager;
                 this.instance.on('asset:remove', (asset) => {
                     fetch(uploadUrl, {

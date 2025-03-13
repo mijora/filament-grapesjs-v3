@@ -29,6 +29,7 @@
   "dependencies": {
     "grapesjs": "^0.22.4",
     "grapesjs-blocks-basic": "^1.0.2",
+    "grapesjs-code-editor": "^0.1.2",
     "grapesjs-custom-code": "^1.0.2",
     "grapesjs-lory-slider": "^0.1.5",
     "grapesjs-navbar": "^1.0.2",
