@@ -31,7 +31,6 @@
         id='gjs_{{$getId()}}'
         class="grapesjs-wrapper"
     >
-        {!! $getHtmlData() !!}
     </div>
 
 </div>
