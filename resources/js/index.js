@@ -38,16 +38,15 @@ document.addEventListener('alpine:init', () => {
                         //"grapesjs-component-code-editor",
                     ],
                 });
-                /*
+                
                 const panelManager = this.instance.Panels;
                 const newButton = panelManager.addButton('views',{
-                    id: 'openCode',
+                    id: 'edit-code',
                     className: 'fa fa-code',
                     command: 'open-code',
                     attributes: { title: 'Open code'},
                     active: false,
                 });
-                */
                 const am = this.instance.AssetManager;
                 this.instance.on('asset:remove', (asset) => {
                     fetch(uploadUrl, {
