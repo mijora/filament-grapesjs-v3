@@ -34,8 +34,9 @@ document.addEventListener('alpine:init', () => {
                         //"grapesjs-lory-slider",
                         "grapesjs-navbar",
                         "grapesjs-custom-code",
-                        "grapesjs-code-editor",
-                        //"grapesjs-component-code-editor",
+                        //"grapesjs-code-editor",
+                        "grapesjs-component-code-editor",
+                        "grapesjs-parser-postcss",
                     ],
                 });
                 
