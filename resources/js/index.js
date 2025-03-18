@@ -44,6 +44,7 @@ document.addEventListener('alpine:init', () => {
                     const htmlData = (this.state ?? '').split('<---!!! STYLE !!!--->');
                     this.instance.setComponents(htmlData[0]);
                     this.instance.setStyle(htmlData[1]);
+                    this.instance.setJs(htmlData[2]);
                     console.log('HTML data reloaded');
                 };
 
@@ -91,6 +92,7 @@ document.addEventListener('alpine:init', () => {
                 });
                 this.instance.on('update', e => {
                     console.log('update');
+                    /*
                     var content = this.instance.getHtml({
                         cleanId: true
                     });
@@ -99,8 +101,8 @@ document.addEventListener('alpine:init', () => {
                         content = extract[1];
                     else
                         content = this.instance.getHtml();
-                    
-                    this.state = content + '<---!!! STYLE !!!--->' + this.instance.getCss() + '<---!!! STYLE !!!--->' + this.instance.getJs();
+                    */
+                    this.state = this.instance.getHtml() + '<---!!! STYLE !!!--->' + this.instance.getCss() + '<---!!! STYLE !!!--->' + this.instance.getJs();
                 });
             }
         })
