@@ -40,8 +40,11 @@ document.addEventListener('alpine:init', () => {
                     ],
                 });
 
+                const editor = this.instance
+                const statePath = this.state
                 window.addEventListener("reload-grapejs", function () {
-                    console.log(this.state);
+                    console.log(statePath);
+                    console.log(editor);
                 });
                 
                 const panelManager = this.instance.Panels;
