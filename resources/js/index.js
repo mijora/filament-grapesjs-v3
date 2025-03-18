@@ -44,7 +44,7 @@ document.addEventListener('alpine:init', () => {
                     console.log(this.state);
                 };
                 window.addEventListener("reload-grapejs", function() {
-                    reloadHtml.call(this);
+                    reloadHtml();
                 });
 
                 
