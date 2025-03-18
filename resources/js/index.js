@@ -39,6 +39,10 @@ document.addEventListener('alpine:init', () => {
                         "grapesjs-parser-postcss",
                     ],
                 });
+
+                window.addEventListener("reload-grapejs", function () {
+                    console.log(this.state);
+                });
                 
                 const panelManager = this.instance.Panels;
                 /*
