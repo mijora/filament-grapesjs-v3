@@ -91,6 +91,7 @@ document.addEventListener('alpine:init', () => {
                     })
                     .catch((error) => console.error('Error fetching assets:', error));
                 });
+                this.instance.off('update');
                 this.instance.on('update', e => {
                     console.log('update');
                     /*
