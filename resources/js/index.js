@@ -42,7 +42,8 @@ document.addEventListener('alpine:init', () => {
 
                 var reloadHtml = () => {
                     const htmlData = (this.state ?? '').split('<---!!! STYLE !!!--->');
-                    //this.instance.setComponents(htmlData[0]);
+                    this.instance.getComponents().reset();
+                    this.instance.setComponents(htmlData[0]);
                     //this.instance.setStyle(htmlData[1]);
                     //this.instance.setScript(htmlData[2]);
                     console.log('HTML data reloaded');
