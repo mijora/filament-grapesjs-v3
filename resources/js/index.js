@@ -102,7 +102,7 @@ document.addEventListener('alpine:init', () => {
                     else
                         content = this.instance.getHtml();
                     */
-                    this.state = this.instance.getHtml() + '<---!!! STYLE !!!--->' + this.instance.getCss() + '<---!!! STYLE !!!--->' + this.instance.getJs();
+                    //this.state = this.instance.getHtml() + '<---!!! STYLE !!!--->' + this.instance.getCss() + '<---!!! STYLE !!!--->' + this.instance.getJs();
                 });
             }
         })
