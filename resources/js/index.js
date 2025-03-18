@@ -44,7 +44,6 @@ document.addEventListener('alpine:init', () => {
                     const htmlData = (this.state ?? '').split('<---!!! STYLE !!!--->');
                     this.instance.setComponents(htmlData[0]);
                     this.instance.setStyle(htmlData[1]);
-                    this.instance.setScript(htmlData[2]);
                     console.log('HTML data reloaded');
                 };
 
