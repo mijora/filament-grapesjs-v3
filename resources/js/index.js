@@ -40,13 +40,17 @@ document.addEventListener('alpine:init', () => {
                     ],
                 });
 
-                var reloadHtml = function() {
-                    console.log(this.state);
+                var reloadHtml = () => {
+                    const htmlData = (this.state ?? '').split('<---!!! STYLE !!!--->');
+                    this.instance.setComponents(htmlData[0]);
+                    this.instance.setStyle(htmlData[1]);
+                    this.instance.setScript(htmlData[2]);
+                    console.log('HTML data reloaded');
                 };
-                window.addEventListener("reload-grapejs", function() {
+
+                window.addEventListener("reload-grapejs", () => {
                     reloadHtml();
                 });
-
                 
                 
                 const panelManager = this.instance.Panels;
