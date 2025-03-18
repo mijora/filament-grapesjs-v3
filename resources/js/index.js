@@ -35,12 +35,13 @@ document.addEventListener('alpine:init', () => {
                         "grapesjs-navbar",
                         "grapesjs-custom-code",
                         //"grapesjs-code-editor",
-                        "grapesjs-component-code-editor",
+                        //"grapesjs-component-code-editor",
                         "grapesjs-parser-postcss",
                     ],
                 });
                 
                 const panelManager = this.instance.Panels;
+                /*
                 const newButton = panelManager.addButton('views',{
                     id: 'edit-code',
                     className: 'fa fa-code',
@@ -48,6 +49,7 @@ document.addEventListener('alpine:init', () => {
                     attributes: { title: 'Open code'},
                     active: false,
                 });
+                */
                 const am = this.instance.AssetManager;
                 this.instance.on('asset:remove', (asset) => {
                     fetch(uploadUrl, {

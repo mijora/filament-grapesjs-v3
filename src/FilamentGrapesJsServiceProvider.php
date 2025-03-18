@@ -75,7 +75,7 @@ class FilamentGrapesJsServiceProvider extends PackageServiceProvider
             Css::make('grapesjs', __DIR__.'/../resources/dist/css/grapes.min.css'),
             Css::make('filament-grapesjs', __DIR__.'/../resources/dist/css/filament-grapesjs.css'),
             //CSS::make('grapesjs-code-editor', __DIR__.'/../resources/dist/css/grapesjs-code-editor.css'),
-            CSS::make('grapesjs-component-code-editor', __DIR__.'/../resources/dist/css/grapesjs-component-code-editor.min.css'),
+            //CSS::make('grapesjs-component-code-editor', __DIR__.'/../resources/dist/css/grapesjs-component-code-editor.min.css'),
 
             Js::make('grapesjs', __DIR__.'/../resources/dist/js/grapes.min.js'),
             Js::make('grapesjs-preset-webpage', __DIR__.'/../resources/dist/js/grapesjs-preset-webpage.min.js'),
@@ -87,7 +87,7 @@ class FilamentGrapesJsServiceProvider extends PackageServiceProvider
             Js::make('filament-grapesjs-tailwindcss', __DIR__.'/../resources/dist/js/grapesjs-tailwind.min.js'),
             Js::make('filament-grapesjs', __DIR__.'/../resources/dist/js/filament-grapesjs.js'),
             //Js::make('grapesjs-code-editor', __DIR__.'/../resources/dist/js/grapesjs-code-editor.js'),
-            Js::make('grapesjs-component-code-editor', __DIR__.'/../resources/dist/js/grapesjs-component-code-editor.min.js'),
+            //Js::make('grapesjs-component-code-editor', __DIR__.'/../resources/dist/js/grapesjs-component-code-editor.min.js'),
             Js::make('grapesjs-parser-postcss', __DIR__.'/../resources/dist/js/grapesjs-parser-postcss.js'),
         ];
     }
