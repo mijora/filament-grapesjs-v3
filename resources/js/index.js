@@ -56,7 +56,7 @@ document.addEventListener('alpine:init', () => {
                     //this.instance.setScript(htmlData[2]);
                     //console.log('HTML data reloaded');
                 };
-
+                window.removeEventListener("reload-grapejs");
                 window.addEventListener("reload-grapejs", () => {
                     console.log('Grapejs reload');
                     reloadHtml();
