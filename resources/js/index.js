@@ -7,10 +7,11 @@ document.addEventListener('alpine:init', () => {
             tools: tools,
             reload() {
                 this.instance.destroy();
+                console.log('Grapejs destroyed');
                 this.init();
-                console.log('Grapejs reloaded');
             },
             init() {
+                console.log('Grapejs Init');
                 let enabledTools = {};
                 const htmlData = (this.state ?? '').split('<---!!! STYLE !!!--->');
                 this.instance =  grapesjs.init({
@@ -57,6 +58,7 @@ document.addEventListener('alpine:init', () => {
                 };
 
                 window.addEventListener("reload-grapejs", () => {
+                    console.log('Grapejs reload');
                     reloadHtml();
                 });
                 
