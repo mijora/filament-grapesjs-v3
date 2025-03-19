@@ -5,6 +5,16 @@ document.addEventListener('alpine:init', () => {
             instance: null,
             state: state,
             tools: tools,
+            reload() {
+                const htmlData = (this.state ?? '').split('<---!!! STYLE !!!--->');
+                console.log(htmlData);
+                //this.instance.getComponents().reset();
+                //this.instance.setComponents(htmlData[0]);
+                //this.instance.setStyle(htmlData[1]);
+                //this.instance.setScript(htmlData[2]);
+                this.instance.destroy();
+                console.log('HTML data reloaded2');
+            },
             init() {
                 let enabledTools = {};
                 const htmlData = (this.state ?? '').split('<---!!! STYLE !!!--->');
@@ -41,6 +51,7 @@ document.addEventListener('alpine:init', () => {
                 });
 
                 var reloadHtml = () => {
+                    this.reload();
                     const htmlData = (this.state ?? '').split('<---!!! STYLE !!!--->');
                     console.log(htmlData);
                     //this.instance.getComponents().reset();
